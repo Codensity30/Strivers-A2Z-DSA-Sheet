@@ -4,13 +4,13 @@
 Each topic has its own directory, which is further divided into difficulties containing the solutions to the problems within that category along with approach. The filenames correspond to the problem number or a brief description for easier identification.
 
 <i>...cpp</i>
-<p>
-    Question: [Problem Statement]
-    Approach: [Brief explanation of the approach used]
-    Code: [C++ code of the following approach]
-    Time Complexity: [Time complexity analysis]
-    Space Complexity: [Space complexity analysis]
-</p>
+<ul>
+    <li>Question: [Problem Statement]</li>
+    <li>Approach: [Brief explanation of the approach used]</li>
+    <li>Code: [C++ code of the following approach]</li>
+    <li>Time Complexity: [Time complexity analysis]</li>
+    <li>Space Complexity: [Space complexity analysis]</li>
+</ul>
 
 <h2>Contribution guidelines</h2>
 Contributions to this repository are welcome. If you'd like to contribute your own solutions or suggest improvements, please follow these guidelines:
