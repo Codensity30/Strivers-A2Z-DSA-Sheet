@@ -1,4 +1,4 @@
-<h1 style="color: indianred;">Striver's A2Z DSA Sheet</h1>
+<h1>Striver's A2Z DSA Sheet</h1>
  contains everything related to Stiver's A2Z sheet along with question, approach and code.
  
 Each topic has its own directory, which is further divided into difficulties containing the solutions to the problems within that category along with approach. The filenames correspond to the problem number or a brief description for easier identification.
@@ -29,4 +29,3 @@ The solutions in this repository are intended to serve as a reference and learni
 
 <h2>Resources</h2>
 <a href="https://takeuforward.org/strivers-a2z-dsa-course/strivers-a2z-dsa-course-sheet-2/">Striver's A2Z DSA Sheet</a>
-
