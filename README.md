@@ -28,4 +28,8 @@ Contributions to this repository are welcome. If you'd like to contribute your o
 The solutions in this repository are intended to serve as a reference and learning resource. It is recommended to understand the problem-solving techniques and attempt to solve the problems yourself before referring to the solutions.
 
 <h2>Resources</h2>
-<a href="https://takeuforward.org/strivers-a2z-dsa-course/strivers-a2z-dsa-course-sheet-2/">Striver's A2Z DSA Sheet</a>
+<a href="https://takeuforward.org/strivers-a2z-dsa-course/strivers-a2z-dsa-course-sheet-2/">Striver's A2Z DSA Sheet
+ 
+### Consistency Matters
+![1000](https://github.com/Codensity30/Striver-s-A2Z-DSA-Sheet/assets/129579058/d23fb219-4930-4c1a-9e8d-fd18ab902cdc)
+
