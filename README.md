@@ -30,6 +30,6 @@ The solutions in this repository are intended to serve as a reference and learni
 <h2>Resources</h2>
 <a href="https://takeuforward.org/strivers-a2z-dsa-course/strivers-a2z-dsa-course-sheet-2/">Striver's A2Z DSA Sheet
  
-### Consistency Matters
+### ----- Consistency Matters -----
 ![1000](https://github.com/Codensity30/Striver-s-A2Z-DSA-Sheet/assets/129579058/d23fb219-4930-4c1a-9e8d-fd18ab902cdc)
 
