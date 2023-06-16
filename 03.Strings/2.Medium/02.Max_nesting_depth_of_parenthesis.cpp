@@ -9,8 +9,8 @@ Approach:
     b. If `c` is a closing parenthesis ')', decrement `opened` by 1.
 3. Return `ans` as the maximum nesting depth.
 
-Time Complexity: O(n), where n is the length of the string `s`.
-Space Complexity: O(1)
+CODE:-
+
 */
 
 int maxDepth(string s) {
@@ -25,3 +25,8 @@ int maxDepth(string s) {
     }
     return ans;
 }
+
+/*
+Time Complexity: O(n), where n is the length of the string `s`.
+Space Complexity: O(1)
+*/
