@@ -26,27 +26,34 @@ Approach:
 8. After iterating over all elements, the heap will contain the K maximum valid sum combinations in non-increasing order.
 9. Store the elements of the heap in a vector and return it as the result.
 
+COMPLEXITY ANALYSIS:-
+TIME COMPLEXITY - 
+Sorting the arrays A and B takes O(N log N) time.
+Building the max heap takes O(N) time.
+Extracting the maximum sum K times takes O(K log N) time.
+Overall, the time complexity of the solution is O(N log N + K log N).
 CODE:-
 */
 
-vector<int> maxCombinations(int N, int K, vector<int>& A, vector<int>& B) {
-    priority_queue<int, vector<int>, greater<int>> pq;
-    sort(A.begin(), A.end(), greater<int>());
-    sort(B.begin(), B.end(), greater<int>());
-
-    for (int i = 0; i < N; i++) {
-        for (int j = 0; j < N; j++) {
-            pq.push(A[i] + B[j]);
-            if (pq.size() > K)
-                pq.pop();
+vector<int> maxCombinations(int N, int K, vector<int> &A, vector<int> &B) {
+    priority_queue<pair<int,pair<int,int>>> pq;
+    sort(A.begin(),A.end());
+    sort(B.begin(),B.end());
+    for(int i=0;i<N;i++){
+        pq.push({A[i]+B[N-1],{i,N-1}});
+    }
+    vector<int> ans;
+    while(!pq.empty() && K--)
+    {
+        auto it=pq.top();
+        pq.pop();
+        int data=it.first;
+        int x=it.second.first;
+        int y=it.second.second;
+        ans.push_back(data);
+        if(y!=0){
+            pq.push({A[x]+B[y-1],{x,y-1}});
         }
     }
-
-    vector<int> result;
-    while (!pq.empty()) {
-        result.push_back(pq.top());
-        pq.pop();
-    }
-
-    return result;
+    return ans;
 }
