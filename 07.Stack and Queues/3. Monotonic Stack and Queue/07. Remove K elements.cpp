@@ -45,9 +45,9 @@ string removeKdigits(string num, int k) {
     
     // Remove leading zeros
     reverse(ans.begin(), ans.end());
-    while (!ans.empty() && ans.back() == '0') {
-        ans.pop_back();
-    }
+    wwhile(!ans.empty() && ans.front()=='0'){
+            ans.erase(ans.begin());
+        }
     
     return ans.empty() ? "0" : ans;
 }
