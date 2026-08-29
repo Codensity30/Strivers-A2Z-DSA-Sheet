@@ -35,5 +35,7 @@ bool arraySortedOrNot(int arr[], int n) {
     return solve(arr, 0, n - 1);
 }
 
-// TIME COMPLEXITY: O(log N)
+// TIME COMPLEXITY: O(N)
+// We recurse on BOTH halves: T(n) = 2T(n/2) + O(1) => O(N) (like merge sort, NOT binary search).
+// Also, any algorithm must check all N-1 adjacent pairs to confirm sortedness, so O(N) is optimal.
 // SPACE COMPLEXITY: O(log N) (for recursion stack)
