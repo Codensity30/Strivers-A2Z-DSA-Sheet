@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>takeuforward-for-free | OG Focused DSA Sheet</title>
+  <meta name="description" content="Clean, minimal bloatware, OG-focused Striver A2Z DSA sheet with Brute-Better-Optimal solutions, interactive algorithm visualizer, and progress tracking.">
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Fallback dataset script for zero-CORS local file:/// execution -->
+  <script src="data/problems.js"></script>
+</head>
+<body>
+
+  <!-- Top Navigation Bar -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <div class="brand">
+        <div class="brand-logo">&lt;/&gt;</div>
+        <div class="brand-text">
+          <h1>takeuforward<span>-for-free</span></h1>
+        </div>
+        <span class="brand-badge">OG FOCUSED</span>
+      </div>
+
+      <div class="nav-stats">
+        <div class="stat-progress-bar">
+          <div class="stat-label">
+            <span>Progress: <strong id="stat-solved-count">0 / 369 (0%)</strong></span>
+            <span>⭐ Bookmarked: <strong id="stat-bookmark-count">0</strong></span>
+          </div>
+          <div class="progress-track">
+            <div id="stat-progress-fill" class="progress-fill"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="nav-actions">
+        <button id="btn-random-problem" class="btn" title="Pick a random problem to solve">
+          🎲 Pick Random
+        </button>
+        <button id="theme-toggle-btn" class="btn btn-icon" title="Toggle Dark/Light Mode">
+          ☀️ Light
+        </button>
+        <button id="btn-reset-progress" class="btn btn-icon" title="Reset all progress">
+          🔄 Reset
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Container -->
+  <main class="container">
+    <!-- Hero / Intro -->
+    <section class="hero">
+      <h2 class="hero-title">Striver's A2Z DSA Sheet — OG Clean Edition</h2>
+      <p class="hero-subtitle">
+        Zero bloatware. 100% free forever. Featuring comprehensive Brute Force, Better, and Optimal solutions with step-by-step algorithms, C++ code, complexity breakdowns, and interactive problem visualizers.
+      </p>
+    </section>
+
+    <!-- Toolbar: Search and Filters -->
+    <section class="toolbar">
+      <div class="search-box">
+        <span class="search-icon">🔍</span>
+        <input 
+          type="text" 
+          id="search-input" 
+          class="search-input" 
+          placeholder="Search 369 DSA questions by name, topic, or keyword... (Press '/' to focus)" 
+          autocomplete="off"
+        />
+      </div>
+
+      <div class="filters-row">
+        <div class="filter-group">
+          <label for="filter-topic" style="font-size: 13px; color: var(--text-secondary); font-weight: 600;">Topic:</label>
+          <select id="filter-topic" class="filter-select">
+            <option value="all">All Topics (16)</option>
+          </select>
+
+          <label for="filter-difficulty" style="font-size: 13px; color: var(--text-secondary); font-weight: 600; margin-left: 8px;">Difficulty:</label>
+          <select id="filter-difficulty" class="filter-select">
+            <option value="all">All Difficulties</option>
+            <option value="easy">Easy</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <span style="font-size: 13px; color: var(--text-secondary); font-weight: 600;">Status:</span>
+          <div class="filter-btn-group">
+            <button class="filter-status-btn active" data-status="all">All</button>
+            <button class="filter-status-btn" data-status="unsolved">Unsolved</button>
+            <button class="filter-status-btn" data-status="solved">Solved</button>
+            <button class="filter-status-btn" data-status="bookmarked">⭐ Bookmarked</button>
+          </div>
+
+          <button id="btn-toggle-accordions" class="btn" style="margin-left: 8px; font-size: 12px; padding: 6px 10px;">
+            Collapse All
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Problem Accordion List -->
+    <section id="topic-list-container" class="topic-list">
+      <!-- Injected dynamically by app.js -->
+    </section>
+  </main>
+
+  <!-- Problem Detail Modal -->
+  <div id="problem-modal" class="modal-overlay">
+    <div class="modal-container">
+      <div class="modal-header">
+        <div>
+          <div id="modal-breadcrumbs" class="modal-breadcrumbs">Topic &gt; Subtopic</div>
+          <div class="modal-title-row">
+            <h2 id="modal-title" class="modal-title">Problem Title</h2>
+            <span id="modal-difficulty-badge" class="badge">Easy</span>
+          </div>
+        </div>
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <button id="modal-btn-prev" class="btn btn-icon" title="Previous problem (Left arrow)">◀ Prev</button>
+          <button id="modal-btn-next" class="btn btn-icon" title="Next problem (Right arrow)">Next ▶</button>
+          <button id="modal-close-btn" class="modal-close-btn" title="Close (Escape)">✕</button>
+        </div>
+      </div>
+
+      <div class="modal-body">
+        <!-- Modal Action & Status Bar -->
+        <div class="modal-actions-bar">
+          <div class="modal-action-group">
+            <label style="display: flex; align-items: center; gap: 8px; cursor: pointer; font-weight: 600; font-size: 13px;">
+              <input type="checkbox" id="modal-check-solved" class="custom-checkbox" />
+              <span>Mark as Solved</span>
+            </label>
+            <button id="modal-btn-star" class="btn-star" title="Bookmark for Revision" style="font-size: 20px;">★</button>
+          </div>
+          <div style="font-size: 12px; color: var(--text-muted);">
+            Tip: Use <kbd style="background: var(--bg-tertiary); padding: 2px 4px; border-radius: 3px;">◀</kbd> and <kbd style="background: var(--bg-tertiary); padding: 2px 4px; border-radius: 3px;">▶</kbd> arrows to navigate between questions.
+          </div>
+        </div>
+
+        <!-- Interactive Visualizer Box (Dynamic) -->
+        <div id="modal-visualizer-container">
+          <!-- Injected dynamically when problem has visualizer -->
+        </div>
+
+        <!-- Problem Statement -->
+        <div class="section-box">
+          <div class="section-title">
+            <span>📝</span> Problem Statement &amp; Examples
+          </div>
+          <div id="modal-question-text" class="question-text"></div>
+        </div>
+
+        <!-- Solutions: Brute Force -> Better -> Optimal -->
+        <div class="section-box">
+          <div class="section-title">
+            <span>🎯</span> Solutions &amp; Complexities
+          </div>
+          <div id="modal-approaches-container">
+            <!-- Injected dynamically -->
+          </div>
+        </div>
+
+        <!-- Notes Section -->
+        <div class="section-box notes-container">
+          <div class="section-title">
+            <span>📓</span> Personal Notes &amp; Key Takeaways
+          </div>
+          <textarea 
+            id="modal-notes-textarea" 
+            class="notes-textarea" 
+            placeholder="Write your personal notes, edge cases to remember, or revision tricks here (automatically saved)..."
+          ></textarea>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>
+        <strong>takeuforward-for-free</strong> — Dedicated to clean, distraction-free DSA learning.
+      </p>
+      <p style="margin-top: 6px; font-size: 12px; color: var(--text-muted);">
+        Inspired by Striver's A2Z DSA Sheet. All solutions and algorithm notes run 100% locally in your browser.
+      </p>
+    </div>
+  </footer>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

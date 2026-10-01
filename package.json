@@ -1,0 +1,35 @@
+{
+  "name": "takeuforward-for-free",
+  "version": "1.0.0",
+  "description": "Old style takeuforward style OG focused website with clean, zero bloatware DSA learning experience and interactive problem visualizers",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "python3 scripts/build_data.py && vite build",
+    "preview": "vite preview",
+    "test": "node --test test/*.test.js",
+    "start": "vite preview --port 8080"
+  },
+  "keywords": [
+    "dsa",
+    "takeuforward",
+    "algorithms",
+    "data-structures",
+    "striver",
+    "a2z-sheet"
+  ],
+  "author": "takeuforward-for-free",
+  "license": "MIT",
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.3.3",
+    "@vitejs/plugin-react": "^6.1.1",
+    "clsx": "^2.1.1",
+    "lucide-react": "^1.49.0",
+    "motion": "^13.5.0",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "tailwind-merge": "^3.7.0",
+    "tailwindcss": "^4.3.3",
+    "vite": "^8.3.2"
+  }
+}

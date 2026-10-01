@@ -1,35 +1,72 @@
-<h1>Striver's A2Z DSA Sheet</h1>
- contains everything related to Stiver's A2Z sheet along with question, approach and code.
- 
-Each topic has its own directory, which is further divided into difficulties containing the solutions to the problems within that category along with approach. The filenames correspond to the problem number or a brief description for easier identification.
+# takeuforward-for-free
 
-<i>...cpp</i>
-<ul>
-    <li>Question: [Problem Statement]</li>
-    <li>Approach: [Brief explanation of the approach used]</li>
-    <li>Code: [C++ code of the following approach]</li>
-    <li>Time Complexity: [Time complexity analysis]</li>
-    <li>Space Complexity: [Space complexity analysis]</li>
-</ul>
+A focused, distraction-free learning companion for Striver's A2Z DSA Sheet.
+The repository contains the original C++ solutions and a static website for
+studying problems, approaches, complexity, and progress in one place.
 
-<h2>Contribution guidelines</h2>
-Contributions to this repository are welcome. If you'd like to contribute your own solutions or suggest improvements, please follow these guidelines:
+## Features
 
-<p>
-    Fork the repository.
-    Create a new branch for your contributions: git checkout -b your-branch-name.
-    Make your changes and add your solutions.
-    Commit your changes with descriptive commit messages: git commit -m "Add solution to Problem X".
-    Push your changes to your forked repository: git push origin your-branch-name.
-    Open a pull request on the original repository, explaining the changes you made and why they should be merged.
-</p>
+- Coverage of the A2Z sheet across 16 DSA topics and their subtopics.
+- Problem statements, approaches, C++ solutions, and time and space complexity.
+- Brute, better, and optimal solution explanations where available.
+- Search by problem name or concept.
+- Filters by topic, difficulty, and completion status.
+- Interactive visualizers for selected algorithms, including Kadane's
+  Algorithm, Binary Search, Two Sum, Dutch National Flag, Majority Element,
+  and array pointer movement.
+- Local progress tracking, bookmarks, and personal notes using browser storage.
+- Dark and light display modes.
 
-<h2>Disclamer</h2>
-The solutions in this repository are intended to serve as a reference and learning resource. It is recommended to understand the problem-solving techniques and attempt to solve the problems yourself before referring to the solutions.
+## Local Usage
 
-<h2>Resources</h2>
-<a href="https://takeuforward.org/strivers-a2z-dsa-course/strivers-a2z-dsa-course-sheet-2/">Striver's A2Z DSA Sheet
- 
-### ----- Consistency Matters -----
-![1000](https://github.com/Codensity30/Striver-s-A2Z-DSA-Sheet/assets/129579058/d23fb219-4930-4c1a-9e8d-fd18ab902cdc)
+The website is a static application and can be used locally without a backend.
 
+### Open directly
+
+Open `index.html` in a browser.
+
+### Use a local server
+
+From the repository root, run:
+
+```bash
+python3 -m http.server 8080
+```
+
+Then open `http://localhost:8080` in a browser.
+
+## Update the Dataset
+
+When C++ solution files are added or changed, rebuild the generated problem
+data:
+
+```bash
+npm run build
+```
+
+The data builder scans the topic directories and updates the generated problem
+data used by the website.
+
+## Run Tests
+
+Run the automated test suite with:
+
+```bash
+npm test
+```
+
+## Repository Structure
+
+- `01.Arrays/` through `16. Strings (Hard)/`: DSA problems and C++ solutions.
+- `index.html`: Main learning interface.
+- `css/`: Website styles and design tokens.
+- `js/`: Parsing, application state, visualizers, and UI logic.
+- `data/`: Generated problem datasets.
+- `scripts/build_data.py`: Dataset generation script.
+- `test/`: Automated tests.
+
+## Learning Note
+
+Try to solve each problem before reading the approach or code. The solutions
+are intended as a reference and learning aid, not as a replacement for
+understanding the underlying technique.
